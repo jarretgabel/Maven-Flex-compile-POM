@@ -6,6 +6,6 @@ This is an example Maven module project with a FlexMojos module that compiles a 
 Usage
 -------
 
-1. Navigate to local directory where parent project exists
+1. Navigate to directory where parent project exists
 2. Run the command "mvn install"
 3. Watch the magic
