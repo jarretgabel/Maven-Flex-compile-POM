@@ -1,0 +1,47 @@
+<asdoc>
+
+<classRec name='Main' fullname='Main' sourcefile='C:\cygwin\home\Flash_dev\Maven-Flex-compile-POM\swf\src\main\flex\Main.as' namespace='' access='public' baseclass='flash.display:Sprite' isFinal='false' isDynamic='false' >
+</classRec>
+<method name='Main' fullname='Main/Main' isStatic='false' isFinal='false' isOverride='false'  result_type='*'>
+<description><![CDATA[
+
+		 constructor
+
+		 ]]></description>
+</method>
+<method name='init' fullname='Main/init' isStatic='false' isFinal='false' isOverride='false'  result_type='void'>
+<description><![CDATA[
+
+		 This is the init function.
+
+		 ]]></description>
+</method>
+<field name='tfComponent' fullname='Main/private:tfComponent' type='view:TFComponent' isStatic='false' isConst='false' >
+<description><![CDATA[
+
+		 tfComponent
+
+		 ]]></description>
+</field>
+<classRec name='TFComponent' fullname='view:TFComponent' sourcefile='C:\cygwin\home\Flash_dev\Maven-Flex-compile-POM\swf\src\main\flex\view\TFComponent.as' namespace='view' access='public' baseclass='flash.display:Sprite' isFinal='false' isDynamic='false' >
+</classRec>
+<method name='TFComponent' fullname='view:TFComponent/TFComponent' isStatic='false' isFinal='false' isOverride='false'  result_type='*'>
+<description><![CDATA[
+
+		 constructor
+
+		 ]]></description>
+</method>
+<method name='init' fullname='view:TFComponent/init' isStatic='false' isFinal='false' isOverride='false'  param_names='str' param_types='String' param_defaults='undefined' result_type='void'>
+<description><![CDATA[
+
+		 This the the TFComponent <code>init()</code> function.
+
+		 ]]></description>
+<param><![CDATA[str
+
+		 ]]></param>
+</method>
+<field name='tf' fullname='view:TFComponent/private:tf' type='flash.text:TextField' isStatic='false' isConst='false' >
+</field>
+</asdoc>

@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<title>Page Title</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
+		<script src="js/swfobject.js" type="text/javascript"></script>
+		<script type="text/javascript" charset="utf-8">		
+			var flashvars = {
+			};
+			var params = {
+				menu: "false",
+				scale: "noScale",
+				allowFullscreen: "true",
+				allowScriptAccess: "always",
+				bgcolor: "#cccccc"
+			};
+			var attributes = {
+				id:"flashcontent"
+			};
+			
+			swfobject.switchOffAutoHideShow();
+			swfobject.embedSWF("swf-module-1.0.swf", "flashcontent", "800", "600", "10.0.0", "swf/expressInstall.swf", flashvars, params, attributes);
+		</script>
+	</head>
+	<body>
+		<div id='flashcontent'></div>
+	</body>
+</html>

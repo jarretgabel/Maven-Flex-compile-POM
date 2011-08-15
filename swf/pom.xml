@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+	<developers>
+		<developer>
+		  <id>developerId</id>
+		  <name>developerName</name>
+		  <email>developerEmail</email>
+		  <url>companyUrl</url>
+		  <organization>companyName</organization>
+		  <roles>
+			<role>developerRole</role>
+		  </roles>
+		</developer>
+	</developers>
+	
+    <parent>
+        <groupId>parent-groupId</groupId>
+        <artifactId>parent-artifactId</artifactId>
+        <version>1.0</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <artifactId>swf-module</artifactId>
+    <packaging>swf</packaging>
+	
+	 <properties>
+        <flexmojos.version>4.0-RC1</flexmojos.version>
+        <flex.version>4.5.0.18623</flex.version>
+        <flexunit.version>4.0-beta-2</flexunit.version>
+    </properties>
+
+    <build>
+		<sourceDirectory>src/main/flex</sourceDirectory>
+		
+		<pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.sonatype.flexmojos</groupId>
+                    <artifactId>flexmojos-maven-plugin</artifactId>
+                    <version>${flexmojos.version}</version>
+                    <extensions>true</extensions>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>2.4.3</version>
+                    <configuration>
+                        <escapeString>\</escapeString>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+       
+        <plugins>
+			
+			<plugin>
+                <groupId>org.sonatype.flexmojos</groupId>
+                <artifactId>flexmojos-maven-plugin</artifactId>
+                <version>${flexmojos.version}</version>
+                <extensions>true</extensions>
+				<dependencies>
+					<dependency>
+						<groupId>com.adobe.flex</groupId>
+						<artifactId>compiler</artifactId>
+						<version>${flex.version}</version>
+						<type>pom</type>
+					</dependency>
+				</dependencies>
+				
+				<executions>
+					<execution>
+						<id>flex-documentation</id>
+						<goals>
+							<goal>asdoc</goal>
+						</goals>
+					</execution>
+				</executions>
+				
+				<configuration>
+					<configurationReport>false</configurationReport>
+					<reportOutputDirectory>target/docs</reportOutputDirectory>
+					<locales>
+						<param>en_US</param>
+					</locales>
+					<updateSecuritySandbox>true</updateSecuritySandbox>
+					<includeAsClasses>
+						<source>
+							<directory>src/main/flex/</directory>
+						</source>
+					</includeAsClasses>
+					<description>API documentation</description>
+					<mainTitle>API documentation</mainTitle>
+					<windowTitle>API documentation</windowTitle>
+					<name>As3CommonsDocs</name>
+					<keepXml>true</keepXml>
+					<dumpConfigAttach>false</dumpConfigAttach>
+					<showWarnings>true</showWarnings>
+					<lenient>true</lenient>
+				</configuration>
+            </plugin>
+        </plugins>
+		
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<targetPath>../</targetPath>
+				<includes>
+					<include>xml/*.*</include>
+					<include>yml/*.*</include>
+					<include>swf/*.*</include>
+					<include>js/*.*</include>
+					<include>php/*.*</include>
+					<include>css/*.*</include>
+					<include>index.html</include>
+				</includes>
+			</resource>
+		</resources>
+		
+    </build>
+
+	<repositories>
+		 <repository>
+            <id>flexgroup-repository</id>
+            <url>http://repository.sonatype.org/content/groups/flexgroup/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+	</repositories>
+  
+    <dependencies>
+        <dependency>
+            <groupId>com.adobe.flex.framework</groupId>
+            <artifactId>flex-framework</artifactId>
+            <type>pom</type>
+        </dependency>
+    </dependencies>
+
+	 <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.adobe.flex.framework</groupId>
+                <artifactId>flex-framework</artifactId>
+                <version>${flex.version}</version>
+                <type>pom</type>
+            </dependency>
+			
+            <dependency>
+                <groupId>com.adobe.flexunit</groupId>
+                <artifactId>flexunit</artifactId>
+                <version>${flexunit.version}</version>
+                <type>swc</type>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+	
+	<pluginRepositories>
+        <pluginRepository>
+            <id>flexgroup-repository</id>
+            <url>http://repository.sonatype.org/content/groups/flexgroup/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
+</project>

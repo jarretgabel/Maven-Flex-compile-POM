@@ -1,0 +1,14 @@
+body {
+	margin: 0px;
+	padding: 0px;
+	background:#FFFFFF;
+}
+
+img {
+	border: none
+}
+
+#flashcontent {
+	width:800px;
+	height:600px;
+}
